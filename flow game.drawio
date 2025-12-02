@@ -1,0 +1,142 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="29.2.2" pages="2">
+  <diagram name="Architecture" id="ywaxc4iAH9w4EAwfJg6E">
+    <mxGraphModel dx="2253" dy="1920" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="nwJYLV1UdyPgK2VQb2Aq-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Phaser 3 + React Game Client" vertex="1">
+          <mxGeometry height="60" width="180" x="-200" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="nwJYLV1UdyPgK2VQb2Aq-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Colyseus Game Server (Node.js)" vertex="1">
+          <mxGeometry height="60" width="200" x="20" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="nwJYLV1UdyPgK2VQb2Aq-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value=".NET 8/9 Web API (GameApi)" vertex="1">
+          <mxGeometry height="60" width="200" x="460" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="nwJYLV1UdyPgK2VQb2Aq-4" parent="1" style="shape=process;rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="PostgreSQL Database" vertex="1">
+          <mxGeometry height="60" width="180" x="960" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="nwJYLV1UdyPgK2VQb2Aq-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="Next.js Admin Panel" vertex="1">
+          <mxGeometry height="60" width="180" x="700" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="nwJYLV1UdyPgK2VQb2Aq-6" edge="1" parent="1" source="nwJYLV1UdyPgK2VQb2Aq-1" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="nwJYLV1UdyPgK2VQb2Aq-2" value="WebSocket (state, combat, catch)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nwJYLV1UdyPgK2VQb2Aq-7" edge="1" parent="1" source="nwJYLV1UdyPgK2VQb2Aq-1" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;dashed=1;" target="nwJYLV1UdyPgK2VQb2Aq-3" value="REST /api/exp, /api/player">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nwJYLV1UdyPgK2VQb2Aq-8" edge="1" parent="1" source="nwJYLV1UdyPgK2VQb2Aq-2" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="nwJYLV1UdyPgK2VQb2Aq-3" value="REST /api/exp, /api/monster">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nwJYLV1UdyPgK2VQb2Aq-9" edge="1" parent="1" source="nwJYLV1UdyPgK2VQb2Aq-3" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="nwJYLV1UdyPgK2VQb2Aq-4" value="EF Core">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nwJYLV1UdyPgK2VQb2Aq-10" edge="1" parent="1" source="nwJYLV1UdyPgK2VQb2Aq-5" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="nwJYLV1UdyPgK2VQb2Aq-3" value="REST /api/admin/monster-types">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nwJYLV1UdyPgK2VQb2Aq-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Sơ đồ tóm gọn" vertex="1">
+          <mxGeometry height="60" width="670" x="80" y="-60" as="geometry" />
+        </mxCell>
+        <mxCell id="nwJYLV1UdyPgK2VQb2Aq-22" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Client Game&#xa;React + Phaser 3&#xa;&#xa;- 2D map, move, catch, farm&#xa;- WebSocket &lt;-&gt; Colyseus&#xa;- REST &lt;-&gt; .NET API (profile, EXP, inventory, farm)" vertex="1">
+          <mxGeometry height="140" width="260" x="-660" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="nwJYLV1UdyPgK2VQb2Aq-23" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Game Server Realtime&#xa;Colyseus (Node.js)&#xa;&#xa;- WorldRoom: players, monsters, farm state&#xa;- Handlers: move, battle, catch_monster, monster_killed&#xa;- Catch Logic (TS): chance = catchRate * hpFactor * ballBonus * statusBonus&#xa;- On monster_killed: call .NET API / update DB" vertex="1">
+          <mxGeometry height="180" width="320" x="-690" y="1230" as="geometry" />
+        </mxCell>
+        <mxCell id="nwJYLV1UdyPgK2VQb2Aq-24" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Backend API&#xa;.NET 8/9 Web API + EF Core&#xa;&#xa;- ExpController: /api/exp/required, /api/exp/player/{playerId}&#xa;- ExpService: ExpToNextLevel, TotalExpToLevel&#xa;- CatchService: logic bắt quái (C#)&#xa;- AdminMonsterTypesController: CRUD + simulate catch" vertex="1">
+          <mxGeometry height="200" width="360" x="-190" y="1220" as="geometry" />
+        </mxCell>
+        <mxCell id="nwJYLV1UdyPgK2VQb2Aq-25" parent="1" style="shape=container;rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="PostgreSQL&#xa;&#xa;Bảng chính:&#xa;- players&#xa;- monster_types&#xa;- player_monsters&#xa;- item_types&#xa;- player_items&#xa;- crop_types&#xa;- farm_tiles" vertex="1">
+          <mxGeometry height="220" width="260" x="530" y="1220" as="geometry" />
+        </mxCell>
+        <mxCell id="nwJYLV1UdyPgK2VQb2Aq-26" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Admin UI&#xa;Next.js + AntD + Tailwind&#xa;&#xa;- /admin/monster-types&#xa;  * Table + Modal CRUD&#xa;  * Search code/name, filter element, rarity&#xa;- /admin/monster-types/simulate&#xa;  * Chọn monster + HP + ball + status&#xa;  * Call simulate API → % bắt" vertex="1">
+          <mxGeometry height="200" width="320" x="110" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="nwJYLV1UdyPgK2VQb2Aq-27" edge="1" parent="1" source="nwJYLV1UdyPgK2VQb2Aq-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="nwJYLV1UdyPgK2VQb2Aq-23" value="WebSocket&#xa;position / battle / catch_monster">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nwJYLV1UdyPgK2VQb2Aq-28" edge="1" parent="1" source="nwJYLV1UdyPgK2VQb2Aq-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="nwJYLV1UdyPgK2VQb2Aq-24" value="REST&#xa;profile / EXP / inventory / farm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nwJYLV1UdyPgK2VQb2Aq-29" edge="1" parent="1" source="nwJYLV1UdyPgK2VQb2Aq-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="nwJYLV1UdyPgK2VQb2Aq-24" value="monster_killed&#xa;→ +EXP + lưu DB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nwJYLV1UdyPgK2VQb2Aq-30" edge="1" parent="1" source="nwJYLV1UdyPgK2VQb2Aq-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="nwJYLV1UdyPgK2VQb2Aq-25" value="EF Core&#xa;CRUD data">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nwJYLV1UdyPgK2VQb2Aq-31" edge="1" parent="1" source="nwJYLV1UdyPgK2VQb2Aq-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="nwJYLV1UdyPgK2VQb2Aq-24" value="REST&#xa;/api/admin/monster-types + simulate">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="280" y="550" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="ERD" id="SD-jUdyjEhTP8kJr6F8h">
+    <mxGraphModel dx="1000" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <!-- players -->
+        <mxCell id="2" value="players&#xa;- id (uuid PK)&#xa;- username&#xa;- current_level&#xa;- current_exp&#xa;- total_exp" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="80" y="60" width="220" height="120" as="geometry" />
+        </mxCell>
+        <!-- monster_types -->
+        <mxCell id="3" value="monster_types&#xa;- id (serial PK)&#xa;- code&#xa;- name&#xa;- catch_rate&#xa;- base_exp_reward" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="420" y="40" width="240" height="120" as="geometry" />
+        </mxCell>
+        <!-- player_monsters -->
+        <mxCell id="4" value="player_monsters&#xa;- id (uuid PK)&#xa;- owner_player_id&#xa;- monster_type_id&#xa;- level&#xa;- current_exp" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="420" y="200" width="240" height="120" as="geometry" />
+        </mxCell>
+        <!-- item_types -->
+        <mxCell id="5" value="item_types&#xa;- id (serial PK)&#xa;- code&#xa;- name&#xa;- item_type" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="760" y="60" width="220" height="120" as="geometry" />
+        </mxCell>
+        <!-- player_items -->
+        <mxCell id="6" value="player_items&#xa;- id (bigserial PK)&#xa;- owner_player_id&#xa;- item_type_id&#xa;- quantity&#xa;- location, slot" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="760" y="220" width="240" height="120" as="geometry" />
+        </mxCell>
+        <!-- crop_types -->
+        <mxCell id="7" value="crop_types&#xa;- id (serial PK)&#xa;- code&#xa;- name&#xa;- harvest_item_type_id" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="80" y="260" width="240" height="120" as="geometry" />
+        </mxCell>
+        <!-- farm_tiles -->
+        <mxCell id="8" value="farm_tiles&#xa;- id (bigserial PK)&#xa;- owner_player_id&#xa;- crop_type_id&#xa;- tile_x, tile_y&#xa;- state" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="80" y="430" width="260" height="130" as="geometry" />
+        </mxCell>
+        <!-- RELATIONSHIPS -->
+        <!-- player_monsters.owner_player_id -> players.id -->
+        <mxCell id="20" value="" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="4" target="2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- player_monsters.monster_type_id -> monster_types.id -->
+        <mxCell id="21" value="" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="4" target="3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- player_items.owner_player_id -> players.id -->
+        <mxCell id="22" value="" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="6" target="2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- player_items.item_type_id -> item_types.id -->
+        <mxCell id="23" value="" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="6" target="5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- crop_types.harvest_item_type_id -> item_types.id -->
+        <mxCell id="24" value="" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="7" target="5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- farm_tiles.owner_player_id -> players.id -->
+        <mxCell id="25" value="" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="8" target="2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- farm_tiles.crop_type_id -> crop_types.id -->
+        <mxCell id="26" value="" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="8" target="7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
